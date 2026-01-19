@@ -17,7 +17,7 @@ Some ready to go functions to control a discord bot to _kinda_ act like a databa
 
 # Usage
 
-## 🔹 Initializing the Bot
+## Initializing the Bot
 
 To start the bot, create a new client with your token and guild ID:
 
@@ -58,7 +58,7 @@ client := &cordbridge.Client{
 }
 ```
 
-## 🔹 Creating a Category
+## Creating a Category
 
 ```go
 category, err := client.CreateCategory(categoryName)
@@ -68,7 +68,7 @@ if err != nil {
 fmt.Printf("Category created with ID: %s\n", category.ID)
 ```
 
-## 🔹 Creating a Channel
+## Creating a Channel
 
 ```go
 channel, err := client.CreateChannel(channelName, categoryID)
@@ -78,7 +78,7 @@ if err != nil {
 fmt.Printf("Channel created with ID: %s\n", channel.ID)
 ```
 
-## 🔹 Finding a Channel
+## Finding a Channel
 
 ```go
 channel, err := client.FindChannelByName(channelName, categoryID)
@@ -88,7 +88,7 @@ if err != nil {
 fmt.Printf("Found channel ID: %s\n", channel.ID)
 ```
 
-## 🔹 Sending Messages
+## Sending Messages
 
 ```go
 err := client.SendMessageToChannel(channelID, "Hello, World!")
@@ -97,7 +97,7 @@ if err != nil {
 }
 ```
 
-## 🔹 Reading All Messages From a Channel
+## Reading All Messages From a Channel
 
 ```go
 allMessages, err := client.ReadAllMessagesFromChannel(channelID)
@@ -107,7 +107,7 @@ if err != nil {
 fmt.Printf("Fetched %d messages\n", len(allMessages))
 ```
 
-## 🔹 Reading Last X Messages From a Channel
+## Reading Last X Messages From a Channel
 
 ```go
 last10, err := client.ReadLastXMessagesFromChannel(channelID, 10)
@@ -117,7 +117,7 @@ if err != nil {
 fmt.Printf("Fetched last %d messages\n", len(last10))
 ```
 
-## 🔹 Editing Messages
+## Editing Messages
 
 ```go
 err := client.EditMessageByID(channelID, messageID, newContent)
@@ -126,7 +126,7 @@ if err != nil {
 }
 ```
 
-## 🔹 Deleting Messages
+## Deleting Messages
 
 ```go
 err := client.DeleteMessageByID(channelID, messageID)
