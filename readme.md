@@ -2,6 +2,8 @@
 
 Some ready to go functions to control a discord bot to _kinda_ act like a database
 
+[npm package](https://www.npmjs.com/package/cordbridge)
+
 # Functions
 
 - **Create Categories**
