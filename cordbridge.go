@@ -1,6 +1,7 @@
 package cordbridge
 
 import (
+	"errors"
 	"fmt"
 	"time"
 
@@ -85,8 +86,7 @@ func (c *Client) FindChannelByName(channelName, categoryID string) (*discordgo.C
 
 func (c *Client) SendMessageToChannel(channelID, message string) error {
 	if channelID == "" {
-		fmt.Println("channel not found")
-		return nil
+		return errors.New("channelID is empty")
 	}
 	_, err := c.Session.ChannelMessageSend(channelID, message)
 	if err != nil {
@@ -97,16 +97,14 @@ func (c *Client) SendMessageToChannel(channelID, message string) error {
 
 func (c *Client) DeleteMessageByID(channelID, messageID string) error {
 	if channelID == "" {
-		fmt.Println("channel not found")
-		return nil
+		return errors.New("channelID is empty")
 	}
 	return c.Session.ChannelMessageDelete(channelID, messageID)
 }
 
 func (c *Client) EditMessageByID(channelID, messageID, newContent string) error {
 	if channelID == "" {
-		fmt.Println("channel not found")
-		return nil
+		return errors.New("channelID is empty")
 	}
 	_, err := c.Session.ChannelMessageEdit(channelID, messageID, newContent)
 	if err != nil {
